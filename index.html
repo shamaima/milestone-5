@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Resume Generator</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Include html2pdf.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="bg-white p-8 rounded shadow-lg w-full max-w-xl">
+    <!-- Form and resume content -->
+    <form id="resume-form" class="space-y-4">
+      <input type="text" id="username" class="input-field" placeholder="Username" required>
+      <input type="text" id="name" class="input-field" placeholder="Full Name" required>
+      <input type="text" id="title" class="input-field" placeholder="Professional Title" required>
+      <textarea id="skills" class="input-field" placeholder="Skills (comma separated)"></textarea>
+      <button type="submit" class="btn-primary">Generate Resume</button>
+    </form>
+    
+    <div id="resume-container" class="hidden mt-8">
+      <div id="resume" class="resume bg-gray-50 p-4 rounded shadow-md">
+        <h2 id="resume-name" class="text-xl font-semibold"></h2>
+        <p id="resume-title" class="text-sm text-gray-600"></p>
+        <ul id="resume-skills" class="list-disc list-inside text-sm text-gray-800"></ul>
+      </div>
+      <div class="flex gap-4 mt-4">
+        <button id="share-link" class="btn-secondary">Share Link</button>
+        <button id="download-pdf" class="btn-secondary">Download as PDF</button>
+      </div>
+    </div>
+  </div>
+  <script src="scripts.js" type="module"></script>
+</body>
+</html>
